@@ -2,12 +2,12 @@
 Common programming problems written in multiple languages
 
 Here are solutions for exercises in:
-    - Python
-    - Go
-    - C
-    - R
-    - Cobol
-    - Fortran
+- Python
+- Go
+- C
+- R
+- Cobol
+- Fortran
 
 USAGE
 -----
@@ -20,12 +20,12 @@ Clone, then run in terminal:
 REQUIREMENTS
 ------------
 In order to compile and run these programs you must install the following compilers/interpreters:
-    - python3
-    - go
-    - gcc
-    - r-base
-    - gfortran
-    - gnucobol
+- python3
+- go
+- gcc
+- r-base
+- gfortran
+- gnucobol
 
 Hope it can be useful. Have fun!
 
