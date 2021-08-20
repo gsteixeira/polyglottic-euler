@@ -12,18 +12,15 @@ func main () {
 }
 
 func narcisistic(number int) bool {
-    var powlist []float64
+    // tell if a given number is a narcisistic one
     s_number := strconv.Itoa(number)
     digits := len(s_number)
+    var total float64 = 0
     for _, char := range s_number{
         dig, err := strconv.Atoi(string(char))
         if err != nil { panic(err) }
         power := math.Pow(float64(dig), float64(digits))
-        powlist = append(powlist, power)
-    }
-    var total float64 = 0 
-    for _, value := range powlist {
-        total += value
+        total += power
     }
     return (int(total) == number)
 }
