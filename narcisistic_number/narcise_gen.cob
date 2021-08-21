@@ -23,6 +23,7 @@ IDENTIFICATION DIVISION.
         IF is_narcise = 1 THEN
             DISPLAY val
         END-IF.
+        EXIT.
 END PROGRAM narcisistic.
 
 IDENTIFICATION DIVISION.

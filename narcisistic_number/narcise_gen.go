@@ -1,8 +1,8 @@
-
 package main
 import "fmt"
 import "math"
 import "strconv"
+
 func main () {
     for i:=10; i<100000; i++ {
         if (narcisistic(i)){
