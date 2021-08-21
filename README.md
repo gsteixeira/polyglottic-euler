@@ -8,7 +8,7 @@ Here are solutions for exercises in:
 - R
 - Cobol
 - Fortran
-- Pgplsql
+- Plsql
 
 USAGE
 -----

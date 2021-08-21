@@ -6,6 +6,7 @@ Other is using recursion to get only the size.
 It also tryies to use memoization using a decorator.
 Using recursion is much more faster.
 """
+from time import time
 
 def memo(function):
     """ decorator to memoize the recursive function.
@@ -92,13 +93,20 @@ def longest_collatz_sequence_recursive(begin_at):
     return (larger_id, larger_seq)
 
 if __name__ == "__main__":
-    #print("the longest_collat_sequence is", longest_collatz_sequence(100000))
-    element, count = longest_collatz_sequence_recursive(10000)
+    start = time()
+    element, count = longest_collatz_sequence(10000)
+    elapsed = time() - start
     print("The longest collatz sequence has "
-          "{} elements for {}".format(element, count))
+          "{} elements for {}.\nTook {} seconds.".format(count, element, elapsed))
+    
+    start = time()
+    element, count = longest_collatz_sequence_recursive(10000)
+    elapsed = time() - start
+    print("The longest collatz sequence has "
+          "{} elements for {}.\nTook {} seconds.".format(count, element, elapsed))
     #We can use a generator
-    #for x in collatz_generator(13):
-        #print(x)
-
+    print("sequence with generator")
+    for x in collatz_generator(13):
+        print(x)
 
     
