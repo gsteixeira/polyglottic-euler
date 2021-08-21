@@ -8,6 +8,7 @@ Here are solutions for exercises in:
 - R
 - Cobol
 - Fortran
+- Pgplsql
 
 USAGE
 -----
@@ -26,6 +27,7 @@ In order to compile and run these programs you must install the following compil
 - r-base
 - gfortran
 - gnucobol
+- postgres
 
 Hope it can be useful. Have fun!
 
