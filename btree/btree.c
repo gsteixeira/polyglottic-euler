@@ -14,8 +14,8 @@ struct BtNode {
 
 typedef struct  BtNode BtNode;
 
-int initialize(BtNode*, int);
 int search(BtNode*, int, int);
+void initialize(BtNode*, int);
 void insert(BtNode*, int);
 void transversal(BtNode*);
 void transversal_inplace(BtNode*);
@@ -48,12 +48,11 @@ int main() {
 }
 
 // Get BtNode ready to use
-int initialize(BtNode *node, int value) {
+void initialize(BtNode *node, int value) {
     node->value = value;
     node->quantity = 1;
     node->left = malloc(sizeof(BtNode));
     node->right = malloc(sizeof(BtNode));
-    return 0;
 }
 
 // Insert a new item on the tree
