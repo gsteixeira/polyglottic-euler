@@ -19,7 +19,6 @@
                         05 node_left        USAGE IS POINTER VALUE NULL.
                         05 node_right       USAGE IS POINTER VALUE NULL.
             PROCEDURE DIVISION.
-            mainline.
                 *> instantiate the root node
                 ALLOCATE btree_node INITIALIZED RETURNING root_node_ptr.
                 *> insert random numbers on the tree
@@ -57,20 +56,20 @@
             PROCEDURE DIVISION USING node_pointer, the_number.
             mainline.
                 SET ADDRESS OF btree_node TO node_pointer.
-                    EVALUATE TRUE
-                        WHEN node_quantity < 1
-                            *> initialize the node
-                            MOVE the_number TO node_value
-                            MOVE 1 TO node_quantity
-                            ALLOCATE temp_node INITIALIZED RETURNING node_left
-                            ALLOCATE temp_node INITIALIZED RETURNING node_right
-                        WHEN the_number < node_value
-                            CALL 'btree_insert' USING node_left, the_number
-                        WHEN the_number > node_value
-                            CALL 'btree_insert' USING node_right, the_number
-                        WHEN the_number = node_value
-                            ADD 1 TO node_quantity
-                    END-EVALUATE
+                EVALUATE TRUE
+                    WHEN node_quantity < 1
+                        *> initialize the node
+                        MOVE the_number TO node_value
+                        MOVE 1 TO node_quantity
+                        ALLOCATE temp_node INITIALIZED RETURNING node_left
+                        ALLOCATE temp_node INITIALIZED RETURNING node_right
+                    WHEN the_number < node_value
+                        CALL 'btree_insert' USING node_left, the_number
+                    WHEN the_number > node_value
+                        CALL 'btree_insert' USING node_right, the_number
+                    WHEN the_number = node_value
+                        ADD 1 TO node_quantity
+                END-EVALUATE
                 GOBACK.
             display_node. *> useful for debugging
                 DISPLAY " Value: " node_value " qty; " node_quantity.
@@ -96,6 +95,8 @@
                 SET ADDRESS OF btree_node TO arg_pointer.
                 IF node_quantity > 0 THEN
                     CALL 'btree_transversal' USING node_left
+                    *> btree_node gets changed by the called function,
+                    *> so we have to set the pointer again after running there
                     SET ADDRESS OF btree_node TO arg_pointer
                     PERFORM VARYING i FROM 1 BY 1 UNTIL i > node_quantity
                         DISPLAY "# " node_value
