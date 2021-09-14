@@ -15,6 +15,8 @@ run: build/c_btree build/go_btree build/cobol_btree btree.R
 	Rscript btree.R
 	@echo "in C"
 	./build/c_btree
+	@echo "in Node.js"
+	nodejs btree.js
 	@echo "in Cobol"
 	./build/cobol_btree
 

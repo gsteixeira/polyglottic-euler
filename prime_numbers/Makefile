@@ -20,6 +20,8 @@ run: build/c_primes build/cobol_primes build/fortran_primes build/go_primes
 	./build/c_primes
 	@echo "in R"
 	Rscript primes.R
+	@echo "in Node.js"
+	nodejs primes.js
 
 clean:
 	rm -f ./build/*

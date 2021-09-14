@@ -20,6 +20,8 @@ run: build/c_fibonacci build/cobol_fibonacci build/fortran_fibonacci build/go_fi
 	./build/c_fibonacci
 	@echo "in R"
 	Rscript fibonacci.R
+	@echo "in Node.js"
+	nodejs fibonacci.js
 
 clean:
 	rm -f ./build/*

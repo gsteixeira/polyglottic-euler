@@ -20,6 +20,8 @@ run: build/c_collatz build/cobol_collatz build/fortran_collatz build/go_collatz
 	./build/c_collatz
 	@echo "in R"
 	Rscript collatz.R
+	@echo "in Node.js"
+	nodejs collatz.js
 
 clean:
 	rm -f ./build/*

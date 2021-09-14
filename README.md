@@ -9,6 +9,7 @@ Here are solutions for exercises in:
 - Cobol
 - Fortran
 - Plsql
+- Node.js
 
 USAGE
 -----
@@ -28,6 +29,7 @@ In order to compile and run these programs you must install the following compil
 - gfortran
 - gnucobol
 - postgres
+- nodejs
 
 Hope it can be useful. Have fun!
 
