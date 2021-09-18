@@ -1,5 +1,5 @@
-# polyglottic-euler
-Common programming problems written in multiple languages
+# polyglottic-stuff
+Common programming exercises written in multiple languages
 
 Here are solutions for exercises in:
 - Python
@@ -10,6 +10,7 @@ Here are solutions for exercises in:
 - Fortran
 - Plsql
 - Node.js
+- Typescript
 
 USAGE
 -----
@@ -30,6 +31,7 @@ In order to compile and run these programs you must install the following compil
 - gnucobol
 - postgres
 - nodejs
+- typescript
 
 Hope it can be useful. Have fun!
 

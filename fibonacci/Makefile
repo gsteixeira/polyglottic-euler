@@ -6,6 +6,7 @@ default: fibonacci.cob fibonacci.f90 fibonacci.c fibonacci.go
 	gfortran -o build/fortran_fibonacci fibonacci.f90
 	cobc -x --free -o build/cobol_fibonacci fibonacci.cob
 	gcc -o build/c_fibonacci fibonacci.c
+	tsc --outFile build/typescript_fibonacci.js fibonacci.ts
 
 run: build/c_fibonacci build/cobol_fibonacci build/fortran_fibonacci build/go_fibonacci
 	@echo "in Go"
@@ -22,6 +23,8 @@ run: build/c_fibonacci build/cobol_fibonacci build/fortran_fibonacci build/go_fi
 	Rscript fibonacci.R
 	@echo "in Node.js"
 	nodejs fibonacci.js
+	@echo "in Typescript"
+	nodejs ./build/typescript_fibonacci.js
 
 clean:
 	rm -f ./build/*

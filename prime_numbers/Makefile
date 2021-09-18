@@ -6,6 +6,7 @@ default: primes.cob primes.f90 primes.c primes.go
 	gfortran -o build/fortran_primes primes.f90
 	cobc -x --free --debug -o build/cobol_primes primes.cob
 	gcc -o build/c_primes primes.c
+	tsc --outFile build/typescript_primes.js primes.ts
 
 run: build/c_primes build/cobol_primes build/fortran_primes build/go_primes
 	@echo "in Go"
@@ -22,6 +23,8 @@ run: build/c_primes build/cobol_primes build/fortran_primes build/go_primes
 	Rscript primes.R
 	@echo "in Node.js"
 	nodejs primes.js
+	@echo "in Typescript"
+	nodejs ./build/typescript_primes.js
 
 clean:
 	rm -f ./build/*

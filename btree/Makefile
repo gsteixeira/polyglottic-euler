@@ -1,10 +1,11 @@
 SHELL := /bin/bash
 
-default: btree.c btree.go btree.cob
+default: btree.c btree.go btree.cob btree.ts
 	mkdir -p build
 	go build -o build/go_btree btree.go
 	gcc -o build/c_btree btree.c
 	cobc -x --free -o build/cobol_btree btree.cob
+	tsc --outFile build/typescript_btree.js btree.ts
 
 run: build/c_btree build/go_btree build/cobol_btree btree.R
 	@echo "in Go"
@@ -19,6 +20,8 @@ run: build/c_btree build/go_btree build/cobol_btree btree.R
 	nodejs btree.js
 	@echo "in Cobol"
 	./build/cobol_btree
+	@echo "in Typescript"
+	nodejs ./build/typescript_btree.js
 
 clean:
 	rm -f ./build/*
