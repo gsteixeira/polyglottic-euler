@@ -63,8 +63,9 @@ module mergesort_mod
         integer :: i
         !
         do i = 1, size(array)
-            print *, array(i)
+            write(*,'(1x,i0)',advance='no') array(i)
         end do
+        print *, ""
     end subroutine print_array
 
     ! The Merge Sort function. Sorts the array.
@@ -109,9 +110,7 @@ program msort
     integer, dimension(10) :: arr
     ! Declare a sample array
     arr = (/9, 7, 8, 6, 5, 128, 3, 4, 1, 2/)
-    print *, "The array before..."
     call print_array(arr)
     call merge_sort(arr, size(arr))
-    print *, "# Result in order"
     call print_array(arr)
 end program

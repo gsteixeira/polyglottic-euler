@@ -1,5 +1,6 @@
 """ Merge sort in python.
 """
+from random import randint
 
 def merge_sort(array: list):
     """
@@ -37,7 +38,7 @@ def merge_sort(array: list):
             k += 1
 
 if __name__ == "__main__":
-    a = [ 5, 6, 3, 8, 1, 9, 2 ]
-    print(a)
-    merge_sort(a)
-    print(a)
+    arr = [randint(0, 99) for _ in range(15)]
+    print(arr)
+    merge_sort(arr)
+    print(arr)

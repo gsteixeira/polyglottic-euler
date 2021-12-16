@@ -57,22 +57,22 @@ void merge_sort(size_t size, int array[size]) {
 
 // The main function
 int main() {
+    srand(time(NULL));
     size_t size = 10;
     int arr[size];
     int i;
     // seed random.
     srand(time(NULL));
     // initialize array with random numbers
-    printf("The array...\n");
     for (i=0; i<size; i++) {
-        arr[i] = rand() % 19 + 0;
-        printf("%d\n", arr[i]);
+        arr[i] = rand() % 99;
+        printf("%d, ", arr[i]);
     }
-    printf("Sorting...\n");
-    // call sort
+    printf("\n");
     merge_sort(size, arr);
     // Show result
     for (i=0; i<size; i++) {
-        printf("%d\n", arr[i]);
+        printf("%d, ", arr[i]);
     }
+    printf("\n");
 }

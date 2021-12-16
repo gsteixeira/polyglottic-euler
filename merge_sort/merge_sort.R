@@ -41,7 +41,7 @@ merge_sort <- function(arr) {
 
 
 # Main program
-a <- c(3, 6, 89, 1, 5, 0, 42, 8, 54)
-print(a)
-b <- merge_sort(a)
-print(b)
+arr <- sample(15)
+print(arr)
+result <- merge_sort(arr)
+print(result)

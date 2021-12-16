@@ -2,15 +2,9 @@ package main
 
 import (
     "fmt"
+    "math/rand"
+    "time"
 )
-
-// The main function
-func main () {
-    var a = []int {5, 7, 4, 2, 9, 6, 1, 0, -2}
-    fmt.Println(a)
-    merge_sort(a)
-    fmt.Println(a)
-}
 
 // Merge sort function. Sort the given array.
 // :param array []int: the array to be sorted
@@ -54,4 +48,16 @@ func merge_sort(array []int) {
             k++
         }
     }
+}
+
+// The main function
+func main () {
+    rand.Seed(time.Now().UnixNano())
+    arr := make([]int, 10);
+    for i:=0; i<len(arr); i++ {
+        arr[i] = rand.Intn(99)
+    }
+    fmt.Println(arr)
+    merge_sort(arr)
+    fmt.Println(arr)
 }

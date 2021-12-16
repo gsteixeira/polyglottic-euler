@@ -41,7 +41,12 @@ function merge_sort(arr: number[]) {
 
 
 // Main program
-var a = [9, 7, 8, 6, 5, 3, 4, 1, 2];
-console.log(a);
-merge_sort(a);
-console.log(a);
+// var arr = Array.from({length: 10}, () => Math.floor(Math.random() * 99));
+var arr :number[] = [];
+let i :number;
+for (i=0; i<10; i++) {
+    arr[i] = Math.floor(Math.random() * 99);
+}
+console.log(arr);
+merge_sort(arr);
+console.log(arr);

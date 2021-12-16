@@ -8,27 +8,27 @@
                     01 datetime         PIC X(21).
                     01 seed             PIC S9(9) BINARY.
                     01 i USAGE IS INDEX.
+                    01 array_size PIC 99 VALUE 10.
                     01 array.
                         02 arr OCCURS 99 TIMES.
                             03 array_value PIC 99 VALUES LOW-VALUES.
             PROCEDURE DIVISION.
                 PERFORM seed_random.
                 *> initialize the array with random values
-                PERFORM VARYING i FROM 1 BY 1 UNTIL i > 10
-                    COMPUTE array_value(i) = FUNCTION 
-                                            RANDOM * (99 - 0 + 1) + 0
+                PERFORM VARYING i FROM 1 BY 1 UNTIL i > array_size
+                    COMPUTE array_value(i) = FUNCTION RANDOM * 99
                 END-PERFORM.
                 *> show
                 PERFORM print_array.
-                DISPLAY "# Ordering..."
                 CALL "merge_sort" USING array.
                 PERFORM print_array.
             STOP RUN.
 
             print_array.
-                PERFORM VARYING i FROM 1 BY 1 UNTIL i > 10
-                    DISPLAY array_value(i)
+                PERFORM VARYING i FROM 1 BY 1 UNTIL i > array_size
+                    DISPLAY array_value(i) ", " WITH NO ADVANCING
                 END-PERFORM.
+                DISPLAY SPACE.
                 EXIT.
 
             seed_random.
