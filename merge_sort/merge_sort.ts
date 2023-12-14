@@ -40,8 +40,6 @@ function merge_sort(arr: number[]) {
 }
 
 
-// Main program
-// var arr = Array.from({length: 10}, () => Math.floor(Math.random() * 99));
 var arr :number[] = [];
 let i :number;
 for (i=0; i<10; i++) {

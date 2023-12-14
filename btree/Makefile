@@ -1,27 +1,32 @@
 SHELL := /bin/bash
 
-default: btree.c btree.go btree.cob btree.ts
-	mkdir -p build
-	go build -o build/go_btree btree.go
-	gcc -o build/c_btree btree.c
-	cobc -x --free -o build/cobol_btree btree.cob
-	tsc --outFile build/typescript_btree.js btree.ts
+SOURCE := btree
 
-run: build/c_btree build/go_btree build/cobol_btree btree.R
+default: $(SOURCE).c $(SOURCE).cc $(SOURCE).go $(SOURCE).cob $(SOURCE).ts
+	mkdir -p build
+	go build -o build/go_$(SOURCE) $(SOURCE).go
+	gcc -o build/c_$(SOURCE) $(SOURCE).c
+	g++ -o build/cc_$(SOURCE) $(SOURCE).cc
+	cobc -x --free -o build/cobol_$(SOURCE) $(SOURCE).cob
+	tsc --outFile build/typescript_$(SOURCE).js $(SOURCE).ts
+
+run: build/c_$(SOURCE) build/go_$(SOURCE) build/cobol_$(SOURCE) $(SOURCE).R
 	@echo "in Go"
-	./build/go_btree
+	./build/go_$(SOURCE)
 	@echo "in Python"
-	python3 btree.py
+	python $(SOURCE).py
 	@echo "in R"
-	Rscript btree.R
+	Rscript $(SOURCE).R
 	@echo "in C"
-	./build/c_btree
+	./build/c_$(SOURCE)
+	@echo "in C++"
+	./build/cc_$(SOURCE)
 	@echo "in Node.js"
-	nodejs btree.js
+	nodejs $(SOURCE).js
 	@echo "in Cobol"
-	./build/cobol_btree
+	./build/cobol_$(SOURCE)
 	@echo "in Typescript"
-	nodejs ./build/typescript_btree.js
+	nodejs ./build/typescript_$(SOURCE).js
 
 clean:
 	rm -f ./build/*

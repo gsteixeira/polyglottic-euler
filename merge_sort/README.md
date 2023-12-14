@@ -3,6 +3,7 @@
 A merge sort implementation in:
 
     - C
+    - C++
     - R
     - Go
     - Python

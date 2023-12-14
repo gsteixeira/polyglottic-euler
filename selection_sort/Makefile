@@ -12,7 +12,7 @@ run: build/c_$(SOURCE) build/go_$(SOURCE) build/cobol_$(SOURCE)
 	@echo "in Go"
 	./build/go_$(SOURCE)
 	@echo "in Python"
-	python3 $(SOURCE).py
+	python $(SOURCE).py
 	@echo "in C"
 	./build/c_$(SOURCE)
 	@echo "in Cobol"

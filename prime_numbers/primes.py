@@ -2,7 +2,6 @@
 def is_prime(number):
     for i in range(2, number):
         if (number % i) == 0:
-            #print('divisible by ', i)
             return False 
     return True
 

@@ -13,7 +13,7 @@ run: build/c_narcise_gen build/cobol_narcise_gen build/fortran_narcise_gen build
 	@echo "in Cobol"
 	./build/cobol_narcise_gen
 	@echo "in Python"
-	python3 narcise_gen.py
+	python narcise_gen.py
 	@echo "in Fortran"
 	./build/fortran_narcise_gen
 	@echo "in C"

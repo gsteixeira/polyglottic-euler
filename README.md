@@ -5,11 +5,12 @@ Here are solutions for exercises in:
 - Python
 - Go
 - C
+- C++
 - R
 - Cobol
 - Fortran
 - Plsql
-- Node.js
+- Javascript
 - Typescript
 
 USAGE
@@ -30,7 +31,7 @@ In order to compile and run these programs you must install the following compil
 - gfortran
 - gnucobol
 - postgres
-- nodejs
+- javascript
 - typescript
 
 Hope it can be useful. Have fun!
